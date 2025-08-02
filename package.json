@@ -1,0 +1,46 @@
+{
+  "name": "@hotina/shimmerjs",
+  "version": "1.0.0",
+  "description": "Biblioteca de efeitos shimmer e glass para CSS/SCSS",
+  "main": "dist/index.js",
+  "style": "dist/shimmer.css",
+  "sass": "src/shimmer.scss",
+  "scripts": {
+    "build": "sass src/shimmer.scss dist/shimmer.css --style compressed",
+    "build:dev": "sass src/shimmer.scss dist/shimmer.css --style expanded",
+    "watch": "sass src/shimmer.scss dist/shimmer.css --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "shimmer",
+    "glass",
+    "rainbow",
+    "css",
+    "scss",
+    "animation",
+    "effects",
+    "apple-intelligence"
+  ],
+  "author": "Hotina Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hotina/shimmerjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hotina/shimmerjs/issues"
+  },
+  "homepage": "https://github.com/hotina/shimmerjs#readme",
+  "files": [
+    "dist/",
+    "src/",
+    "README.md"
+  ],
+  "devDependencies": {
+    "sass": "^1.69.0"
+  },
+  "peerDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 

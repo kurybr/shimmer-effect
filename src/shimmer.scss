@@ -1,0 +1,1160 @@
+/* ========================================
+   SHIMMERJS - Biblioteca de Efeitos Shimmer
+   ======================================== */
+
+:root {
+  --base: #9aa3af;
+  /* cor base do texto (pode usar currentColor) */
+  --speed: 1.6s;
+  /* velocidade do brilho */
+  --shimmer-opacity: 0.85;
+  /* opacidade do brilho */
+  --shimmer-width: 18%;
+  /* largura da faixa de brilho */
+}
+
+/* ========================================
+   SHIMMER HORIZONTAL (esquerda -> direita)
+   ======================================== */
+
+.ai-analyzing {
+  color: transparent;
+  background-image:
+    /* faixa de brilho que passa por cima */
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
+    /* base sólida do texto */
+    linear-gradient(90deg, var(--base), var(--base));
+  background-size: 200% 100%, 100% 100%;
+  background-position: -50% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiSheenX var(--speed) linear infinite;
+}
+
+@keyframes aiSheenX {
+  to {
+    background-position: 150% 0, 0 0;
+  }
+}
+
+/* ========================================
+   SHIMMER VERTICAL (baixo -> cima)
+   ======================================== */
+
+.ai-analyzing-y {
+  color: transparent;
+  background-image:
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
+    linear-gradient(0deg, var(--base), var(--base));
+  background-size: 100% 220%, 100% 100%;
+  background-position: 0 120%, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiSheenY var(--speed) linear infinite;
+}
+
+@keyframes aiSheenY {
+  to {
+    background-position: 0 -20%, 0 0;
+  }
+}
+
+/* ========================================
+   SHIMMER DIAGONAL
+   ======================================== */
+
+.ai-analyzing-diagonal {
+  color: transparent;
+  background-image:
+    linear-gradient(45deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
+    linear-gradient(45deg, var(--base), var(--base));
+  background-size: 200% 200%, 100% 100%;
+  background-position: -50% -50%, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiSheenDiagonal var(--speed) linear infinite;
+}
+
+@keyframes aiSheenDiagonal {
+  to {
+    background-position: 150% 150%, 0 0;
+  }
+}
+
+/* ========================================
+   VARIANTES DE CORES
+   ======================================== */
+
+/* Variante arco-íris para a base do texto */
+.ai-rainbow {
+  /* mantém a faixa de brilho no layer 1; troca a base no layer 2: */
+  background-image:
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
+    linear-gradient(90deg,
+      #0fa4f5,
+      #6366f1,
+      #a855f7,
+      #ec4899,
+      #f97316,
+      #facc15);
+  background-size: 200% 100%, 200% 100%;
+  background-position: -50% 0, 0 0;
+  animation: aiSheenRainbow var(--speed) linear infinite;
+}
+
+@keyframes aiSheenRainbow {
+  to {
+    background-position: 150% 0, 100% 0;
+  }
+}
+
+/* Variante dourada */
+.ai-gold {
+  background-image:
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
+    linear-gradient(90deg,
+      #fbbf24,
+      #f59e0b,
+      #d97706,
+      #92400e);
+  background-size: 200% 100%, 200% 100%;
+  background-position: -50% 0, 0 0;
+  animation: aiSheenGold var(--speed) linear infinite;
+}
+
+@keyframes aiSheenGold {
+  to {
+    background-position: 150% 0, 100% 0;
+  }
+}
+
+/* Variante prateada */
+.ai-silver {
+  background-image:
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
+    linear-gradient(90deg,
+      #e5e7eb,
+      #d1d5db,
+      #9ca3af,
+      #6b7280);
+  background-size: 200% 100%, 200% 100%;
+  background-position: -50% 0, 0 0;
+  animation: aiSheenSilver var(--speed) linear infinite;
+}
+
+@keyframes aiSheenSilver {
+  to {
+    background-position: 150% 0, 100% 0;
+  }
+}
+
+/* Variante neon */
+.ai-neon {
+  background-image:
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
+    linear-gradient(90deg,
+      #00ff00,
+      #00ffff,
+      #0080ff,
+      #8000ff,
+      #ff00ff);
+  background-size: 200% 100%, 200% 100%;
+  background-position: -50% 0, 0 0;
+  animation: aiSheenNeon var(--speed) linear infinite;
+}
+
+@keyframes aiSheenNeon {
+  to {
+    background-position: 150% 0, 100% 0;
+  }
+}
+
+/* ========================================
+   PONTINHOS ANIMADOS "..."
+   ======================================== */
+
+.ai-dots {
+  display: inline-flex;
+  gap: .12em;
+  margin-left: .2em;
+}
+
+.ai-dots span {
+  opacity: 0;
+  animation: aiDot 1.2s ease-in-out infinite;
+}
+
+.ai-dots span:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.ai-dots span:nth-child(3) {
+  animation-delay: .4s;
+}
+
+@keyframes aiDot {
+  0%,
+  20% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+
+  30%,
+  70% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80%,
+  100% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+}
+
+/* ========================================
+   VARIANTES DE VELOCIDADE
+   ======================================== */
+
+.ai-analyzing-slow {
+  animation-duration: 3s;
+}
+
+.ai-analyzing-fast {
+  animation-duration: 0.8s;
+}
+
+.ai-analyzing-pulse {
+  animation: aiSheenPulse 2s ease-in-out infinite;
+}
+
+@keyframes aiSheenPulse {
+  0%, 100% {
+    background-position: -50% 0, 0 0;
+  }
+  50% {
+    background-position: 150% 0, 0 0;
+  }
+}
+
+/* ========================================
+   SHIMMER PARA ELEMENTOS NÃO-TEXTO
+   ======================================== */
+
+/* Shimmer para divs/cards */
+.ai-shimmer-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--base);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+      transparent calc(var(--shimmer-width) * 2));
+    animation: aiShimmerSlide var(--speed) linear infinite;
+  }
+}
+
+@keyframes aiShimmerSlide {
+  to {
+    left: 100%;
+  }
+}
+
+/* Shimmer para botões */
+.ai-shimmer-button {
+  position: relative;
+  overflow: hidden;
+  background: var(--base);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+      transparent calc(var(--shimmer-width) * 2));
+    animation: aiShimmerSlide var(--speed) linear infinite;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Shimmer para avatares */
+.ai-shimmer-avatar {
+  position: relative;
+  overflow: hidden;
+  background: var(--base);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+      transparent calc(var(--shimmer-width) * 2));
+    animation: aiShimmerSlide var(--speed) linear infinite;
+    border-radius: 50%;
+  }
+}
+
+/* Shimmer para linhas de texto */
+.ai-shimmer-line {
+  position: relative;
+  overflow: hidden;
+  background: var(--base);
+  height: 16px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+      transparent calc(var(--shimmer-width) * 2));
+    animation: aiShimmerSlide var(--speed) linear infinite;
+  }
+  
+  &.ai-shimmer-line-sm {
+    height: 12px;
+  }
+  
+  &.ai-shimmer-line-lg {
+    height: 20px;
+  }
+  
+  &.ai-shimmer-line-xl {
+    height: 24px;
+  }
+}
+
+/* ========================================
+   SHIMMER AVANÇADO COM BACKGROUND-CLIP
+   ======================================== */
+
+/* Shimmer com gradiente complexo */
+.ai-shimmer-gradient {
+  color: transparent;
+  background-image:
+    /* faixa de brilho */
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.9) 15%,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(255, 255, 255, 0.9) 35%,
+      rgba(255, 255, 255, 0) 50%),
+    /* base com gradiente */
+    linear-gradient(90deg,
+      #667eea 0%,
+      #764ba2 25%,
+      #f093fb 50%,
+      #f5576c 75%,
+      #4facfe 100%);
+  background-size: 200% 100%, 200% 100%;
+  background-position: -50% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiShimmerGradient 2.5s linear infinite;
+}
+
+@keyframes aiShimmerGradient {
+  to {
+    background-position: 150% 0, 100% 0;
+  }
+}
+
+/* Shimmer com múltiplas faixas de brilho */
+.ai-shimmer-multi {
+  color: transparent;
+  background-image:
+    /* primeira faixa de brilho */
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.8) 10%,
+      rgba(255, 255, 255, 0) 20%),
+    /* segunda faixa de brilho */
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 60%),
+    /* terceira faixa de brilho */
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 80%,
+      rgba(255, 255, 255, 0.4) 90%,
+      rgba(255, 255, 255, 0) 100%),
+    /* base sólida */
+    linear-gradient(90deg, var(--base), var(--base));
+  background-size: 200% 100%, 200% 100%, 200% 100%, 100% 100%;
+  background-position: -50% 0, -50% 0, -50% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiShimmerMulti 3s linear infinite;
+}
+
+@keyframes aiShimmerMulti {
+  to {
+    background-position: 150% 0, 150% 0, 150% 0, 0 0;
+  }
+}
+
+/* Shimmer com efeito de onda */
+.ai-shimmer-wave {
+  color: transparent;
+  background-image:
+    /* faixa de brilho ondulada */
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 5%,
+      rgba(255, 255, 255, 0.8) 15%,
+      rgba(255, 255, 255, 0.1) 25%,
+      rgba(255, 255, 255, 0) 35%),
+    /* base com gradiente suave */
+    linear-gradient(90deg,
+      #667eea 0%,
+      #764ba2 50%,
+      #667eea 100%);
+  background-size: 200% 100%, 200% 100%;
+  background-position: -50% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiShimmerWave 2s ease-in-out infinite;
+}
+
+@keyframes aiShimmerWave {
+  0%, 100% {
+    background-position: -50% 0, 0 0;
+  }
+  50% {
+    background-position: 150% 0, 0 0;
+  }
+}
+
+/* Shimmer com efeito de pulso no texto */
+.ai-shimmer-pulse-text {
+  color: transparent;
+  background-image:
+    /* faixa de brilho */
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
+    /* base com gradiente pulsante */
+    linear-gradient(90deg,
+      #ff6b6b 0%,
+      #4ecdc4 25%,
+      #45b7d1 50%,
+      #96ceb4 75%,
+      #ffeaa7 100%);
+  background-size: 200% 100%, 200% 100%;
+  background-position: -50% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiShimmerPulseText 2s ease-in-out infinite;
+}
+
+@keyframes aiShimmerPulseText {
+  0%, 100% {
+    background-position: -50% 0, 0 0;
+    transform: scale(1);
+  }
+  50% {
+    background-position: 150% 0, 100% 0;
+    transform: scale(1.05);
+  }
+}
+
+/* Shimmer com efeito de digitação */
+.ai-shimmer-typewriter {
+  color: transparent;
+  background-image:
+    /* faixa de brilho */
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
+    /* base sólida */
+    linear-gradient(90deg, var(--base), var(--base));
+  background-size: 200% 100%, 100% 100%;
+  background-position: -50% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiShimmerTypewriter 3s steps(40, end) infinite;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes aiShimmerTypewriter {
+  0% {
+    background-position: -50% 0, 0 0;
+    width: 0;
+  }
+  50% {
+    background-position: 150% 0, 0 0;
+    width: 100%;
+  }
+  100% {
+    background-position: -50% 0, 0 0;
+    width: 100%;
+  }
+}
+
+/* Shimmer com efeito de glitch */
+.ai-shimmer-glitch {
+  color: transparent;
+  position: relative;
+  
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      linear-gradient(90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
+        rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
+      linear-gradient(90deg, var(--base), var(--base));
+    background-size: 200% 100%, 100% 100%;
+    background-position: -50% 0, 0 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  &::before {
+    animation: aiShimmerGlitch1 2s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  }
+  
+  &::after {
+    animation: aiShimmerGlitch2 2s linear infinite;
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes aiShimmerGlitch1 {
+  0%, 100% {
+    background-position: -50% 0, 0 0;
+    transform: translate(0);
+  }
+  20% {
+    background-position: 150% 0, 0 0;
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    background-position: -50% 0, 0 0;
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    background-position: 150% 0, 0 0;
+    transform: translate(2px, 2px);
+  }
+  80% {
+    background-position: -50% 0, 0 0;
+    transform: translate(2px, -2px);
+  }
+}
+
+@keyframes aiShimmerGlitch2 {
+  0%, 100% {
+    background-position: -50% 0, 0 0;
+    transform: translate(0);
+  }
+  20% {
+    background-position: 150% 0, 0 0;
+    transform: translate(2px, -2px);
+  }
+  40% {
+    background-position: -50% 0, 0 0;
+    transform: translate(2px, 2px);
+  }
+  60% {
+    background-position: 150% 0, 0 0;
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    background-position: -50% 0, 0 0;
+    transform: translate(-2px, 2px);
+  }
+}
+
+/* Shimmer com efeito de holograma */
+.ai-shimmer-hologram {
+  color: transparent;
+  background-image:
+    /* faixa de brilho holográfica */
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 10%,
+      rgba(255, 255, 255, 0.8) 20%,
+      rgba(255, 255, 255, 0.1) 30%,
+      rgba(255, 255, 255, 0) 40%),
+    /* base holográfica */
+    linear-gradient(90deg,
+      #ff0080 0%,
+      #ff8c00 16.66%,
+      #40e0d0 33.33%,
+      #ee82ee 50%,
+      #f0f8ff 66.66%,
+      #ff0080 83.33%,
+      #ff8c00 100%);
+  background-size: 200% 100%, 200% 100%;
+  background-position: -50% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiShimmerHologram 3s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+@keyframes aiShimmerHologram {
+  to {
+    background-position: 150% 0, 100% 0;
+  }
+}
+
+/* ========================================
+   APPLE INTELLIGENCE SHIMMER
+   ======================================== */
+
+/* Variante Apple Intelligence com cores específicas */
+.ai-apple-intelligence {
+  color: transparent;
+  background-image:
+    /* faixa de brilho que passa por cima */
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.9) 15%,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(255, 255, 255, 0.9) 35%,
+      rgba(255, 255, 255, 0) 50%),
+    /* base com cores da Apple Intelligence */
+    linear-gradient(90deg,
+      #007AFF,  /* Azul Apple */
+      #5856D6,  /* Roxo Apple */
+      #FF2D92,  /* Rosa Apple */
+      #FF9500,  /* Laranja Apple */
+      #FFCC02,  /* Amarelo Apple */
+      #34C759,  /* Verde Apple */
+      #007AFF   /* Volta ao azul */
+    );
+  background-size: 200% 100%, 200% 100%;
+  background-position: -50% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiAppleIntelligence 3s linear infinite;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@keyframes aiAppleIntelligence {
+  to {
+    background-position: 150% 0, 100% 0;
+  }
+}
+
+/* Variante Apple Intelligence com efeito mais suave */
+.ai-apple-intelligence-soft {
+  color: transparent;
+  background-image:
+    /* faixa de brilho suave */
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 20%,
+      rgba(255, 255, 255, 0) 40%),
+    /* base com cores da Apple Intelligence mais suaves */
+    linear-gradient(90deg,
+      #007AFF,
+      #5856D6,
+      #FF2D92,
+      #FF9500,
+      #FFCC02,
+      #34C759,
+      #007AFF
+    );
+  background-size: 200% 100%, 200% 100%;
+  background-position: -50% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiAppleIntelligenceSoft 4s ease-in-out infinite;
+  font-weight: 600;
+}
+
+@keyframes aiAppleIntelligenceSoft {
+  0%, 100% {
+    background-position: -50% 0, 0 0;
+  }
+  50% {
+    background-position: 150% 0, 100% 0;
+  }
+}
+
+/* ========================================
+   APPLE INTELLIGENCE VERTICAL
+   ======================================== */
+
+/* Apple Intelligence vertical (baixo -> cima) */
+.ai-apple-intelligence-y {
+  color: transparent;
+  background-image:
+    /* faixa de brilho vertical */
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.9) 15%,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(255, 255, 255, 0.9) 35%,
+      rgba(255, 255, 255, 0) 50%),
+    /* base com cores da Apple Intelligence */
+    linear-gradient(180deg,
+      #007AFF,  /* Azul Apple */
+      #5856D6,  /* Roxo Apple */
+      #FF2D92,  /* Rosa Apple */
+      #FF9500,  /* Laranja Apple */
+      #FFCC02,  /* Amarelo Apple */
+      #34C759,  /* Verde Apple */
+      #007AFF   /* Volta ao azul */
+    );
+  background-size: 100% 220%, 100% 200%;
+  background-position: 0 120%, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiAppleIntelligenceY 3s linear infinite;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@keyframes aiAppleIntelligenceY {
+  to {
+    background-position: 0 -20%, 0 -100%;
+  }
+}
+
+/* Apple Intelligence vertical suave */
+.ai-apple-intelligence-y-soft {
+  color: transparent;
+  background-image:
+    /* faixa de brilho vertical suave */
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 20%,
+      rgba(255, 255, 255, 0) 40%),
+    /* base com cores da Apple Intelligence mais suaves */
+    linear-gradient(180deg,
+      #007AFF,
+      #5856D6,
+      #FF2D92,
+      #FF9500,
+      #FFCC02,
+      #34C759,
+      #007AFF
+    );
+  background-size: 100% 220%, 100% 200%;
+  background-position: 0 120%, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiAppleIntelligenceYSoft 4s ease-in-out infinite;
+  font-weight: 600;
+}
+
+@keyframes aiAppleIntelligenceYSoft {
+  0%, 100% {
+    background-position: 0 120%, 0 0;
+  }
+  50% {
+    background-position: 0 -20%, 0 -100%;
+  }
+}
+
+/* Apple Intelligence diagonal */
+.ai-apple-intelligence-diagonal {
+  color: transparent;
+  background-image:
+    /* faixa de brilho diagonal */
+    linear-gradient(45deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.9) 15%,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(255, 255, 255, 0.9) 35%,
+      rgba(255, 255, 255, 0) 50%),
+    /* base com cores da Apple Intelligence */
+    linear-gradient(45deg,
+      #007AFF,  /* Azul Apple */
+      #5856D6,  /* Roxo Apple */
+      #FF2D92,  /* Rosa Apple */
+      #FF9500,  /* Laranja Apple */
+      #FFCC02,  /* Amarelo Apple */
+      #34C759,  /* Verde Apple */
+      #007AFF   /* Volta ao azul */
+    );
+  background-size: 200% 200%, 200% 200%;
+  background-position: -50% -50%, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiAppleIntelligenceDiagonal 3s linear infinite;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@keyframes aiAppleIntelligenceDiagonal {
+  to {
+    background-position: 150% 150%, 100% 100%;
+  }
+}
+
+/* ========================================
+   APPLE INTELLIGENCE PURPLE VARIANT
+   ======================================== */
+
+/* Apple Intelligence com paleta roxa (purple-800 até preto) */
+.ai-apple-intelligence-purple {
+  color: transparent;
+  background-image:
+    /* faixa de brilho que passa por cima */
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.9) 15%,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(255, 255, 255, 0.9) 35%,
+      rgba(255, 255, 255, 0) 50%),
+    /* base com gradiente roxo para preto */
+    linear-gradient(90deg,
+      #6b21a8,  /* purple-800 */
+      #581c87,  /* purple-900 */
+      #3b0764,  /* purple-950 */
+      #1e1b4b,  /* slate-900 */
+      #0f172a,  /* slate-950 */
+      #000000   /* preto */
+    );
+  background-size: 200% 100%, 200% 100%;
+  background-position: -50% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiAppleIntelligencePurple 3s linear infinite;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@keyframes aiAppleIntelligencePurple {
+  0% {
+    background-position: -50% 0, 0 0; /* começa preto */
+  }
+  50% {
+    background-position: 150% 0, 100% 0; /* vai para roxo */
+  }
+  100% {
+    background-position: -50% 0, 0 0; /* volta para preto */
+  }
+}
+
+/* Apple Intelligence purple vertical */
+.ai-apple-intelligence-purple-y {
+  color: transparent;
+  background-image:
+    /* faixa de brilho vertical */
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.9) 15%,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(255, 255, 255, 0.9) 35%,
+      rgba(255, 255, 255, 0) 50%),
+    /* base com gradiente roxo para preto */
+    linear-gradient(180deg,
+      #6b21a8,  /* purple-800 */
+      #581c87,  /* purple-900 */
+      #3b0764,  /* purple-950 */
+      #1e1b4b,  /* slate-900 */
+      #0f172a,  /* slate-950 */
+      #000000   /* preto */
+    );
+  background-size: 100% 220%, 100% 200%;
+  background-position: 0 120%, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiAppleIntelligencePurpleY 3s linear infinite;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@keyframes aiAppleIntelligencePurpleY {
+  0% {
+    background-position: 0 120%, 0 0; /* começa preto */
+  }
+  50% {
+    background-position: 0 -20%, 0 -100%; /* vai para roxo */
+  }
+  100% {
+    background-position: 0 120%, 0 0; /* volta para preto */
+  }
+}
+
+/* Apple Intelligence purple diagonal */
+.ai-apple-intelligence-purple-diagonal {
+  color: transparent;
+  background-image:
+    /* faixa de brilho diagonal */
+    linear-gradient(45deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.9) 15%,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(255, 255, 255, 0.9) 35%,
+      rgba(255, 255, 255, 0) 50%),
+    /* base com gradiente roxo para preto */
+    linear-gradient(45deg,
+      #6b21a8,  /* purple-800 */
+      #581c87,  /* purple-900 */
+      #3b0764,  /* purple-950 */
+      #1e1b4b,  /* slate-900 */
+      #0f172a,  /* slate-950 */
+      #000000   /* preto */
+    );
+  background-size: 200% 200%, 200% 200%;
+  background-position: -50% -50%, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiAppleIntelligencePurpleDiagonal 3s linear infinite;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@keyframes aiAppleIntelligencePurpleDiagonal {
+  0% {
+    background-position: -50% -50%, 0 0; /* começa preto */
+  }
+  50% {
+    background-position: 150% 150%, 100% 100%; /* vai para roxo */
+  }
+  100% {
+    background-position: -50% -50%, 0 0; /* volta para preto */
+  }
+}
+
+/* Apple Intelligence purple suave */
+.ai-apple-intelligence-purple-soft {
+  color: transparent;
+  background-image:
+    /* faixa de brilho suave */
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 20%,
+      rgba(255, 255, 255, 0) 40%),
+    /* base com gradiente roxo para preto mais suave */
+    linear-gradient(90deg,
+      #7c3aed,  /* purple-600 */
+      #6b21a8,  /* purple-800 */
+      #581c87,  /* purple-900 */
+      #3b0764,  /* purple-950 */
+      #1e1b4b,  /* slate-900 */
+      #0f172a   /* slate-950 */
+    );
+  background-size: 200% 100%, 200% 100%;
+  background-position: -50% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aiAppleIntelligencePurpleSoft 4s ease-in-out infinite;
+  font-weight: 600;
+}
+
+@keyframes aiAppleIntelligencePurpleSoft {
+  0% {
+    background-position: -50% 0, 0 0; /* começa preto */
+  }
+  50% {
+    background-position: 150% 0, 100% 0; /* vai para roxo */
+  }
+  100% {
+    background-position: -50% 0, 0 0; /* volta para preto */
+  }
+}
+
+/* ========================================
+   UTILITÁRIOS
+   ======================================== */
+
+/* Classes para diferentes tamanhos */
+.ai-shimmer-sm {
+  min-height: 20px;
+}
+
+.ai-shimmer-md {
+  min-height: 40px;
+}
+
+.ai-shimmer-lg {
+  min-height: 80px;
+}
+
+.ai-shimmer-xl {
+  min-height: 120px;
+}
+
+/* Classes para diferentes cores de base */
+.ai-shimmer-primary {
+  --base: #3b82f6;
+}
+
+.ai-shimmer-success {
+  --base: #10b981;
+}
+
+.ai-shimmer-warning {
+  --base: #f59e0b;
+}
+
+.ai-shimmer-danger {
+  --base: #ef4444;
+}
+
+.ai-shimmer-dark {
+  --base: #374151;
+}
+
+.ai-shimmer-light {
+  --base: #f3f4f6;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .ai-shimmer-card {
+    min-height: 150px;
+  }
+  
+  .ai-shimmer-avatar {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .ai-shimmer-line {
+    height: 14px;
+    
+    &.ai-shimmer-line-sm {
+      height: 10px;
+    }
+    
+    &.ai-shimmer-line-lg {
+      height: 18px;
+    }
+    
+    &.ai-shimmer-line-xl {
+      height: 22px;
+    }
+  }
+}
+
+/* ========================================
+   ACESSIBILIDADE
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-analyzing,
+  .ai-analyzing-y,
+  .ai-analyzing-diagonal,
+  .ai-rainbow,
+  .ai-gold,
+  .ai-silver,
+  .ai-neon,
+  .ai-shimmer-card,
+  .ai-shimmer-button,
+  .ai-shimmer-avatar,
+  .ai-shimmer-line,
+  .ai-shimmer-gradient,
+  .ai-shimmer-multi,
+  .ai-shimmer-wave,
+  .ai-shimmer-pulse-text,
+  .ai-shimmer-typewriter,
+  .ai-shimmer-glitch,
+  .ai-shimmer-hologram,
+  .ai-apple-intelligence,
+  .ai-apple-intelligence-soft,
+  .ai-apple-intelligence-y,
+  .ai-apple-intelligence-y-soft,
+  .ai-apple-intelligence-diagonal,
+  .ai-apple-intelligence-purple,
+  .ai-apple-intelligence-purple-y,
+  .ai-apple-intelligence-purple-diagonal,
+  .ai-apple-intelligence-purple-soft {
+    animation: none;
+  }
+
+  .ai-dots span {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+} 

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShimmerJS - Exemplos</title>
+    <link rel="stylesheet" href="dist/shimmer.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: white;
+        }
+        
+        .section h2 {
+            color: #374151;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .example {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f9fafb;
+        }
+        
+        .example h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+            color: #6b7280;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card h4 {
+            margin: 0 0 15px 0;
+            color: #374151;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="ai-apple-intelligence">ShimmerJS</h1>
+        
+        <div class="section">
+            <h2>🎨 Shimmer Básico</h2>
+            <div class="example">
+                <h3>Horizontal</h3>
+                <h4 class="ai-analyzing">Carregando...</h4>
+            </div>
+            <div class="example">
+                <h3>Vertical</h3>
+                <h4 class="ai-analyzing-y">Processando</h4>
+            </div>
+            <div class="example">
+                <h3>Diagonal</h3>
+                <h4 class="ai-analyzing-diagonal">Analisando dados</h4>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🌈 Variações de Cor</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4 class="ai-rainbow">Rainbow</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-gold">Gold</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-silver">Silver</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-neon">Neon</h4>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🍎 Apple Intelligence</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4 class="ai-apple-intelligence">Apple Intelligence</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-apple-intelligence-y">Vertical</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-apple-intelligence-diagonal">Diagonal</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-apple-intelligence-soft">Suave</h4>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🟣 Purple Variant</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4 class="ai-apple-intelligence-purple">Purple</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-apple-intelligence-purple-y">Vertical</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-apple-intelligence-purple-diagonal">Diagonal</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-apple-intelligence-purple-soft">Suave</h4>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>⚡ Shimmer Avançado</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4 class="ai-shimmer-gradient">Gradiente</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-shimmer-multi">Múltiplas Faixas</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-shimmer-wave">Onda</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-shimmer-pulse-text">Pulso</h4>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎭 Efeitos Especiais</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4 class="ai-shimmer-typewriter">Digitação</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-shimmer-glitch" data-text="Glitch">Glitch</h4>
+                </div>
+                <div class="card">
+                    <h4 class="ai-shimmer-hologram">Holograma</h4>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📦 Elementos</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4>Card</h4>
+                    <div class="ai-shimmer-card ai-shimmer-md"></div>
+                </div>
+                <div class="card">
+                    <h4>Botão</h4>
+                    <button class="ai-shimmer-button">Clique aqui</button>
+                </div>
+                <div class="card">
+                    <h4>Avatar</h4>
+                    <div class="ai-shimmer-avatar"></div>
+                </div>
+                <div class="card">
+                    <h4>Linhas</h4>
+                    <div class="ai-shimmer-line ai-shimmer-line-lg"></div>
+                    <div class="ai-shimmer-line ai-shimmer-line-sm"></div>
+                    <div class="ai-shimmer-line"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>⚙️ Utilitários</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4>Tamanhos</h4>
+                    <div class="ai-shimmer-card ai-shimmer-sm"></div>
+                    <div class="ai-shimmer-card ai-shimmer-md"></div>
+                    <div class="ai-shimmer-card ai-shimmer-lg"></div>
+                </div>
+                <div class="card">
+                    <h4>Cores</h4>
+                    <div class="ai-shimmer-card ai-shimmer-primary ai-shimmer-sm"></div>
+                    <div class="ai-shimmer-card ai-shimmer-success ai-shimmer-sm"></div>
+                    <div class="ai-shimmer-card ai-shimmer-warning ai-shimmer-sm"></div>
+                    <div class="ai-shimmer-card ai-shimmer-danger ai-shimmer-sm"></div>
+                </div>
+                <div class="card">
+                    <h4>Velocidades</h4>
+                    <h5 class="ai-analyzing ai-analyzing-slow">Lento</h5>
+                    <h5 class="ai-analyzing ai-analyzing-fast">Rápido</h5>
+                    <h5 class="ai-analyzing ai-analyzing-pulse">Pulse</h5>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🔗 Pontinhos Animados</h2>
+            <div class="example">
+                <h3>Carregando com pontinhos</h3>
+                <h4 class="ai-analyzing">
+                    Carregando
+                    <span class="ai-dots">
+                        <span>.</span>
+                        <span>.</span>
+                        <span>.</span>
+                    </span>
+                </h4>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Exemplo de uso do JavaScript
+        console.log('ShimmerJS carregado!');
+        
+        // Você pode usar as funções exportadas aqui
+        // import { applyShimmer, classes } from './src/index.js';
+    </script>
+</body>
+</html> 
