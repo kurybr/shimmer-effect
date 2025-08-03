@@ -20,15 +20,17 @@
 .ai-analyzing {
   color: transparent;
   background-image:
-    /* faixa de brilho que passa por cima */
+    /* faixa de brilho única que passa por cima */
     linear-gradient(90deg,
       rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
-      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%),
     /* base sólida do texto */
     linear-gradient(90deg, var(--base), var(--base));
   background-size: 200% 100%, 100% 100%;
-  background-position: -50% 0, 0 0;
+  background-position: -100% 0, 0 0;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -37,7 +39,7 @@
 
 @keyframes aiSheenX {
   to {
-    background-position: 150% 0, 0 0;
+    background-position: 200% 0, 0 0;
   }
 }
 
@@ -48,13 +50,17 @@
 .ai-analyzing-y {
   color: transparent;
   background-image:
+    /* faixa de brilho única que passa por cima */
     linear-gradient(180deg,
       rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
-      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, var(--shimmer-opacity)) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%),
+    /* base sólida do texto */
     linear-gradient(0deg, var(--base), var(--base));
-  background-size: 100% 220%, 100% 100%;
-  background-position: 0 120%, 0 0;
+  background-size: 100% 200%, 100% 100%;
+  background-position: 0 100%, 0 0;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -63,135 +69,13 @@
 
 @keyframes aiSheenY {
   to {
-    background-position: 0 -20%, 0 0;
+    background-position: 0 -100%, 0 0;
   }
 }
 
-/* ========================================
-   SHIMMER DIAGONAL
-   ======================================== */
 
-.ai-analyzing-diagonal {
-  color: transparent;
-  background-image:
-    linear-gradient(45deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
-      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
-    linear-gradient(45deg, var(--base), var(--base));
-  background-size: 200% 200%, 100% 100%;
-  background-position: -50% -50%, 0 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: aiSheenDiagonal var(--speed) linear infinite;
-}
 
-@keyframes aiSheenDiagonal {
-  to {
-    background-position: 150% 150%, 0 0;
-  }
-}
 
-/* ========================================
-   VARIANTES DE CORES
-   ======================================== */
-
-/* Variante arco-íris para a base do texto */
-.ai-rainbow {
-  /* mantém a faixa de brilho no layer 1; troca a base no layer 2: */
-  background-image:
-    linear-gradient(90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
-      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
-    linear-gradient(90deg,
-      #0fa4f5,
-      #6366f1,
-      #a855f7,
-      #ec4899,
-      #f97316,
-      #facc15);
-  background-size: 200% 100%, 200% 100%;
-  background-position: -50% 0, 0 0;
-  animation: aiSheenRainbow var(--speed) linear infinite;
-}
-
-@keyframes aiSheenRainbow {
-  to {
-    background-position: 150% 0, 100% 0;
-  }
-}
-
-/* Variante dourada */
-.ai-gold {
-  background-image:
-    linear-gradient(90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
-      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
-    linear-gradient(90deg,
-      #fbbf24,
-      #f59e0b,
-      #d97706,
-      #92400e);
-  background-size: 200% 100%, 200% 100%;
-  background-position: -50% 0, 0 0;
-  animation: aiSheenGold var(--speed) linear infinite;
-}
-
-@keyframes aiSheenGold {
-  to {
-    background-position: 150% 0, 100% 0;
-  }
-}
-
-/* Variante prateada */
-.ai-silver {
-  background-image:
-    linear-gradient(90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
-      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
-    linear-gradient(90deg,
-      #e5e7eb,
-      #d1d5db,
-      #9ca3af,
-      #6b7280);
-  background-size: 200% 100%, 200% 100%;
-  background-position: -50% 0, 0 0;
-  animation: aiSheenSilver var(--speed) linear infinite;
-}
-
-@keyframes aiSheenSilver {
-  to {
-    background-position: 150% 0, 100% 0;
-  }
-}
-
-/* Variante neon */
-.ai-neon {
-  background-image:
-    linear-gradient(90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
-      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
-    linear-gradient(90deg,
-      #00ff00,
-      #00ffff,
-      #0080ff,
-      #8000ff,
-      #ff00ff);
-  background-size: 200% 100%, 200% 100%;
-  background-position: -50% 0, 0 0;
-  animation: aiSheenNeon var(--speed) linear infinite;
-}
-
-@keyframes aiSheenNeon {
-  to {
-    background-position: 150% 0, 100% 0;
-  }
-}
 
 /* ========================================
    PONTINHOS ANIMADOS "..."
@@ -524,159 +408,8 @@
   }
 }
 
-/* Shimmer com efeito de digitação */
-.ai-shimmer-typewriter {
-  color: transparent;
-  background-image:
-    /* faixa de brilho */
-    linear-gradient(90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
-      rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
-    /* base sólida */
-    linear-gradient(90deg, var(--base), var(--base));
-  background-size: 200% 100%, 100% 100%;
-  background-position: -50% 0, 0 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: aiShimmerTypewriter 3s steps(40, end) infinite;
-  overflow: hidden;
-  white-space: nowrap;
-}
 
-@keyframes aiShimmerTypewriter {
-  0% {
-    background-position: -50% 0, 0 0;
-    width: 0;
-  }
-  50% {
-    background-position: 150% 0, 0 0;
-    width: 100%;
-  }
-  100% {
-    background-position: -50% 0, 0 0;
-    width: 100%;
-  }
-}
 
-/* Shimmer com efeito de glitch */
-.ai-shimmer-glitch {
-  color: transparent;
-  position: relative;
-  
-  &::before,
-  &::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:
-      linear-gradient(90deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, var(--shimmer-opacity)) var(--shimmer-width),
-        rgba(255, 255, 255, 0) calc(var(--shimmer-width) * 2)),
-      linear-gradient(90deg, var(--base), var(--base));
-    background-size: 200% 100%, 100% 100%;
-    background-position: -50% 0, 0 0;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  &::before {
-    animation: aiShimmerGlitch1 2s linear infinite;
-    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-  }
-  
-  &::after {
-    animation: aiShimmerGlitch2 2s linear infinite;
-    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
-  }
-}
-
-@keyframes aiShimmerGlitch1 {
-  0%, 100% {
-    background-position: -50% 0, 0 0;
-    transform: translate(0);
-  }
-  20% {
-    background-position: 150% 0, 0 0;
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    background-position: -50% 0, 0 0;
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    background-position: 150% 0, 0 0;
-    transform: translate(2px, 2px);
-  }
-  80% {
-    background-position: -50% 0, 0 0;
-    transform: translate(2px, -2px);
-  }
-}
-
-@keyframes aiShimmerGlitch2 {
-  0%, 100% {
-    background-position: -50% 0, 0 0;
-    transform: translate(0);
-  }
-  20% {
-    background-position: 150% 0, 0 0;
-    transform: translate(2px, -2px);
-  }
-  40% {
-    background-position: -50% 0, 0 0;
-    transform: translate(2px, 2px);
-  }
-  60% {
-    background-position: 150% 0, 0 0;
-    transform: translate(-2px, -2px);
-  }
-  80% {
-    background-position: -50% 0, 0 0;
-    transform: translate(-2px, 2px);
-  }
-}
-
-/* Shimmer com efeito de holograma */
-.ai-shimmer-hologram {
-  color: transparent;
-  background-image:
-    /* faixa de brilho holográfica */
-    linear-gradient(90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.1) 10%,
-      rgba(255, 255, 255, 0.8) 20%,
-      rgba(255, 255, 255, 0.1) 30%,
-      rgba(255, 255, 255, 0) 40%),
-    /* base holográfica */
-    linear-gradient(90deg,
-      #ff0080 0%,
-      #ff8c00 16.66%,
-      #40e0d0 33.33%,
-      #ee82ee 50%,
-      #f0f8ff 66.66%,
-      #ff0080 83.33%,
-      #ff8c00 100%);
-  background-size: 200% 100%, 200% 100%;
-  background-position: -50% 0, 0 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: aiShimmerHologram 3s linear infinite;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-}
-
-@keyframes aiShimmerHologram {
-  to {
-    background-position: 150% 0, 100% 0;
-  }
-}
 
 /* ========================================
    APPLE INTELLIGENCE SHIMMER
@@ -686,13 +419,13 @@
 .ai-apple-intelligence {
   color: transparent;
   background-image:
-    /* faixa de brilho que passa por cima */
+    /* faixa de brilho única que passa por cima */
     linear-gradient(90deg,
       rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.9) 15%,
-      rgba(255, 255, 255, 0.3) 25%,
-      rgba(255, 255, 255, 0.9) 35%,
-      rgba(255, 255, 255, 0) 50%),
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.9) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%),
     /* base com cores da Apple Intelligence */
     linear-gradient(90deg,
       #007AFF,  /* Azul Apple */
@@ -704,7 +437,7 @@
       #007AFF   /* Volta ao azul */
     );
   background-size: 200% 100%, 200% 100%;
-  background-position: -50% 0, 0 0;
+  background-position: -100% 0, 0 0;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -715,7 +448,7 @@
 
 @keyframes aiAppleIntelligence {
   to {
-    background-position: 150% 0, 100% 0;
+    background-position: 200% 0, 100% 0;
   }
 }
 
@@ -723,11 +456,13 @@
 .ai-apple-intelligence-soft {
   color: transparent;
   background-image:
-    /* faixa de brilho suave */
+    /* faixa de brilho única e suave */
     linear-gradient(90deg,
       rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.6) 20%,
-      rgba(255, 255, 255, 0) 40%),
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%),
     /* base com cores da Apple Intelligence mais suaves */
     linear-gradient(90deg,
       #007AFF,
@@ -739,7 +474,7 @@
       #007AFF
     );
   background-size: 200% 100%, 200% 100%;
-  background-position: -50% 0, 0 0;
+  background-position: -100% 0, 0 0;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -749,10 +484,10 @@
 
 @keyframes aiAppleIntelligenceSoft {
   0%, 100% {
-    background-position: -50% 0, 0 0;
+    background-position: -100% 0, 0 0;
   }
   50% {
-    background-position: 150% 0, 100% 0;
+    background-position: 200% 0, 100% 0;
   }
 }
 
@@ -764,13 +499,13 @@
 .ai-apple-intelligence-y {
   color: transparent;
   background-image:
-    /* faixa de brilho vertical */
+    /* faixa de brilho única vertical */
     linear-gradient(180deg,
       rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.9) 15%,
-      rgba(255, 255, 255, 0.3) 25%,
-      rgba(255, 255, 255, 0.9) 35%,
-      rgba(255, 255, 255, 0) 50%),
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.9) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%),
     /* base com cores da Apple Intelligence */
     linear-gradient(180deg,
       #007AFF,  /* Azul Apple */
@@ -781,8 +516,8 @@
       #34C759,  /* Verde Apple */
       #007AFF   /* Volta ao azul */
     );
-  background-size: 100% 220%, 100% 200%;
-  background-position: 0 120%, 0 0;
+  background-size: 100% 200%, 100% 200%;
+  background-position: 0 100%, 0 0;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -793,7 +528,7 @@
 
 @keyframes aiAppleIntelligenceY {
   to {
-    background-position: 0 -20%, 0 -100%;
+    background-position: 0 -100%, 0 -100%;
   }
 }
 
@@ -834,42 +569,7 @@
   }
 }
 
-/* Apple Intelligence diagonal */
-.ai-apple-intelligence-diagonal {
-  color: transparent;
-  background-image:
-    /* faixa de brilho diagonal */
-    linear-gradient(45deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.9) 15%,
-      rgba(255, 255, 255, 0.3) 25%,
-      rgba(255, 255, 255, 0.9) 35%,
-      rgba(255, 255, 255, 0) 50%),
-    /* base com cores da Apple Intelligence */
-    linear-gradient(45deg,
-      #007AFF,  /* Azul Apple */
-      #5856D6,  /* Roxo Apple */
-      #FF2D92,  /* Rosa Apple */
-      #FF9500,  /* Laranja Apple */
-      #FFCC02,  /* Amarelo Apple */
-      #34C759,  /* Verde Apple */
-      #007AFF   /* Volta ao azul */
-    );
-  background-size: 200% 200%, 200% 200%;
-  background-position: -50% -50%, 0 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: aiAppleIntelligenceDiagonal 3s linear infinite;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
 
-@keyframes aiAppleIntelligenceDiagonal {
-  to {
-    background-position: 150% 150%, 100% 100%;
-  }
-}
 
 /* ========================================
    APPLE INTELLIGENCE PURPLE VARIANT
@@ -879,13 +579,13 @@
 .ai-apple-intelligence-purple {
   color: transparent;
   background-image:
-    /* faixa de brilho que passa por cima */
+    /* faixa de brilho única que passa por cima */
     linear-gradient(90deg,
       rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.9) 15%,
-      rgba(255, 255, 255, 0.3) 25%,
-      rgba(255, 255, 255, 0.9) 35%,
-      rgba(255, 255, 255, 0) 50%),
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.9) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%),
     /* base com gradiente roxo para preto */
     linear-gradient(90deg,
       #6b21a8,  /* purple-800 */
@@ -896,7 +596,7 @@
       #000000   /* preto */
     );
   background-size: 200% 100%, 200% 100%;
-  background-position: -50% 0, 0 0;
+  background-position: -100% 0, 0 0;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -907,13 +607,13 @@
 
 @keyframes aiAppleIntelligencePurple {
   0% {
-    background-position: -50% 0, 0 0; /* começa preto */
+    background-position: -100% 0, 0 0; /* começa preto */
   }
   50% {
-    background-position: 150% 0, 100% 0; /* vai para roxo */
+    background-position: 200% 0, 100% 0; /* vai para roxo */
   }
   100% {
-    background-position: -50% 0, 0 0; /* volta para preto */
+    background-position: -100% 0, 0 0; /* volta para preto */
   }
 }
 
@@ -921,13 +621,13 @@
 .ai-apple-intelligence-purple-y {
   color: transparent;
   background-image:
-    /* faixa de brilho vertical */
+    /* faixa de brilho única vertical */
     linear-gradient(180deg,
       rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.9) 15%,
-      rgba(255, 255, 255, 0.3) 25%,
-      rgba(255, 255, 255, 0.9) 35%,
-      rgba(255, 255, 255, 0) 50%),
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.9) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%),
     /* base com gradiente roxo para preto */
     linear-gradient(180deg,
       #6b21a8,  /* purple-800 */
@@ -937,8 +637,8 @@
       #0f172a,  /* slate-950 */
       #000000   /* preto */
     );
-  background-size: 100% 220%, 100% 200%;
-  background-position: 0 120%, 0 0;
+  background-size: 100% 200%, 100% 200%;
+  background-position: 0 100%, 0 0;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -949,67 +649,29 @@
 
 @keyframes aiAppleIntelligencePurpleY {
   0% {
-    background-position: 0 120%, 0 0; /* começa preto */
+    background-position: 0 100%, 0 0; /* começa preto */
   }
   50% {
-    background-position: 0 -20%, 0 -100%; /* vai para roxo */
+    background-position: 0 -100%, 0 -100%; /* vai para roxo */
   }
   100% {
-    background-position: 0 120%, 0 0; /* volta para preto */
+    background-position: 0 100%, 0 0; /* volta para preto */
   }
 }
 
-/* Apple Intelligence purple diagonal */
-.ai-apple-intelligence-purple-diagonal {
-  color: transparent;
-  background-image:
-    /* faixa de brilho diagonal */
-    linear-gradient(45deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.9) 15%,
-      rgba(255, 255, 255, 0.3) 25%,
-      rgba(255, 255, 255, 0.9) 35%,
-      rgba(255, 255, 255, 0) 50%),
-    /* base com gradiente roxo para preto */
-    linear-gradient(45deg,
-      #6b21a8,  /* purple-800 */
-      #581c87,  /* purple-900 */
-      #3b0764,  /* purple-950 */
-      #1e1b4b,  /* slate-900 */
-      #0f172a,  /* slate-950 */
-      #000000   /* preto */
-    );
-  background-size: 200% 200%, 200% 200%;
-  background-position: -50% -50%, 0 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: aiAppleIntelligencePurpleDiagonal 3s linear infinite;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
 
-@keyframes aiAppleIntelligencePurpleDiagonal {
-  0% {
-    background-position: -50% -50%, 0 0; /* começa preto */
-  }
-  50% {
-    background-position: 150% 150%, 100% 100%; /* vai para roxo */
-  }
-  100% {
-    background-position: -50% -50%, 0 0; /* volta para preto */
-  }
-}
 
 /* Apple Intelligence purple suave */
 .ai-apple-intelligence-purple-soft {
   color: transparent;
   background-image:
-    /* faixa de brilho suave */
+    /* faixa de brilho única e suave */
     linear-gradient(90deg,
       rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.6) 20%,
-      rgba(255, 255, 255, 0) 40%),
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%),
     /* base com gradiente roxo para preto mais suave */
     linear-gradient(90deg,
       #7c3aed,  /* purple-600 */
@@ -1020,7 +682,7 @@
       #0f172a   /* slate-950 */
     );
   background-size: 200% 100%, 200% 100%;
-  background-position: -50% 0, 0 0;
+  background-position: -100% 0, 0 0;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1030,13 +692,13 @@
 
 @keyframes aiAppleIntelligencePurpleSoft {
   0% {
-    background-position: -50% 0, 0 0; /* começa preto */
+    background-position: -100% 0, 0 0; /* começa preto */
   }
   50% {
-    background-position: 150% 0, 100% 0; /* vai para roxo */
+    background-position: 200% 0, 100% 0; /* vai para roxo */
   }
   100% {
-    background-position: -50% 0, 0 0; /* volta para preto */
+    background-position: -100% 0, 0 0; /* volta para preto */
   }
 }
 
@@ -1124,11 +786,7 @@
 @media (prefers-reduced-motion: reduce) {
   .ai-analyzing,
   .ai-analyzing-y,
-  .ai-analyzing-diagonal,
-  .ai-rainbow,
-  .ai-gold,
-  .ai-silver,
-  .ai-neon,
+
   .ai-shimmer-card,
   .ai-shimmer-button,
   .ai-shimmer-avatar,
@@ -1137,17 +795,14 @@
   .ai-shimmer-multi,
   .ai-shimmer-wave,
   .ai-shimmer-pulse-text,
-  .ai-shimmer-typewriter,
-  .ai-shimmer-glitch,
-  .ai-shimmer-hologram,
+
+
   .ai-apple-intelligence,
   .ai-apple-intelligence-soft,
   .ai-apple-intelligence-y,
   .ai-apple-intelligence-y-soft,
-  .ai-apple-intelligence-diagonal,
   .ai-apple-intelligence-purple,
   .ai-apple-intelligence-purple-y,
-  .ai-apple-intelligence-purple-diagonal,
   .ai-apple-intelligence-purple-soft {
     animation: none;
   }

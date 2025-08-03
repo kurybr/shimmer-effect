@@ -6,9 +6,14 @@
   "style": "dist/shimmer.css",
   "sass": "src/shimmer.scss",
   "scripts": {
-    "build": "sass src/shimmer.scss dist/shimmer.css --style compressed",
-    "build:dev": "sass src/shimmer.scss dist/shimmer.css --style expanded",
-    "watch": "sass src/shimmer.scss dist/shimmer.css --watch",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "sass src/shimmer.scss dist/shimmer.css --style compressed",
+    "build:css:dev": "sass src/shimmer.scss dist/shimmer.css --style expanded",
+    "build:js": "esbuild src/index.js --bundle --format=esm --outfile=dist/index.js --minify",
+    "build:js:dev": "esbuild src/index.js --bundle --format=esm --outfile=dist/index.js",
+    "watch": "npm run watch:css & npm run watch:js",
+    "watch:css": "sass src/shimmer.scss dist/shimmer.css --watch",
+    "watch:js": "esbuild src/index.js --bundle --format=esm --outfile=dist/index.js --watch",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -37,10 +42,10 @@
     "README.md"
   ],
   "devDependencies": {
+    "esbuild": "^0.25.8",
     "sass": "^1.69.0"
   },
-  "peerDependencies": {},
   "engines": {
     "node": ">=14.0.0"
   }
-} 
+}

@@ -148,6 +148,8 @@ export function updateConfig(newConfig) {
   }
 }
 
+
+
 // Exporta tudo como default
 export default {
   version,
